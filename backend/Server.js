@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
   res.send('Server is running!');
 });
 
-// Mount the routes
+
 app.use("/api/task", task);
 
 app.listen(PORT, () => {

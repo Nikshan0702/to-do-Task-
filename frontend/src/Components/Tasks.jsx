@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,7 +8,7 @@ const Tasks = () => {
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(true);
 
-  // Fetch tasks on component mount
+
   useEffect(() => {
     getTasks();
   }, []);
@@ -80,7 +78,7 @@ const Tasks = () => {
         throw new Error(data.details || data.error || 'Update failed');
       }
   
-      // Update the task in state
+
       setAllTasks(allTasks.map(task => 
         task.id === numericId ? {
           ...task,
@@ -96,12 +94,12 @@ const Tasks = () => {
     }
   };
 
-  // Get all pending tasks sorted by creation date (newest first)
+
   const pendingTasks = allTasks
     .filter(task => task.status !== 'completed')
     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
-  // Always show exactly 5 pending tasks (or less if not enough exist)
+
   const displayTasks = pendingTasks.slice(0, 5);
 
   if (loading) {
