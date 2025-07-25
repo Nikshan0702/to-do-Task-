@@ -33,7 +33,8 @@ exports.getTasks = async (req, res) => {
     const result = await pool.query(
       'SELECT * FROM tasks ORDER BY created_at ASC LIMIT 6'
     );
-    res.json(result.rows);
+    // res.json(result.rows);
+    res.json(result.rows || []);
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ error: 'Server error' }); 

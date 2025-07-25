@@ -8,7 +8,7 @@ services:
     ports:
       - "5173:5173"
     volumes:
-      - ./frontend:/app
+    
       - /app/node_modules
     depends_on:
       - backend
@@ -30,7 +30,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://postgres:nikshan@db:5432/Todo  # Use service name
+      - DATABASE_URL=postgres://postgres:nikshan@db:5433/Todo  # Use service name
     networks:
       - app-network
 
