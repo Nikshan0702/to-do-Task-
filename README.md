@@ -44,6 +44,10 @@ password -nikshan
 for build - docker-compose up --build
 
 
+05.clone repository
+git clone https://github.com/your-username/todo-app.git
+
+
 
 ### Prerequisites
 
